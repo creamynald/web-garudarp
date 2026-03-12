@@ -16,17 +16,20 @@ class PlayerTracker extends Component
     public function render()
     {
         $allPlayers = Player::query()
-            ->when($this->search, function($query) {
-                $query->where('charinfo->firstname', 'like', '%' . $this->search . '%')
+            ->online()
+            ->when($this->search, function ($query) {
+                $query->where(function ($q) {
+                    $q->where('charinfo->firstname', 'like', '%' . $this->search . '%')
                     ->orWhere('charinfo->lastname', 'like', '%' . $this->search . '%')
                     ->orWhere('citizenid', 'like', '%' . $this->search . '%');
+                });
             })
-            ->orderBy('last_updated', 'desc')
+            ->orderByDesc('last_updated')
             ->get();
 
         return view('livewire.five-m.player-tracker', [
             'players' => $allPlayers,
-            'onlineCount' => $allPlayers->filter->is_active->count(),
-        ])->layout('layouts.app'); 
+            'onlineCount' => $allPlayers->count(),
+        ])->layout('layouts.app');
     }
 }

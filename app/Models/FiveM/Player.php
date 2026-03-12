@@ -64,4 +64,14 @@ class Player extends Model
 
         return $this->last_updated->gt(now()->subMinutes(15));
     }
+
+    public function scopeOnline($query)
+    {
+        return $query->where('last_updated', '>', now()->subMinutes(15));
+    }
+
+    public function scopeRecent($query)
+    {
+        return $query->where('last_updated', '>', now()->subDay());
+    }
 }

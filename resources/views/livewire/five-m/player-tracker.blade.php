@@ -1,5 +1,5 @@
-<div class="p-6 bg-gray-950 h-screen text-white flex gap-6 overflow-hidden">
-    
+<div wire:poll.30s class="p-6 bg-gray-950 h-screen text-white flex gap-6 overflow-hidden">
+
     <div class="w-1/4 bg-gray-900 rounded-2xl border border-gray-800 flex flex-col shadow-2xl overflow-hidden">
         <div class="p-4 border-b border-gray-800 bg-gray-900/50 backdrop-blur-md">
             <h1 class="text-xl font-extrabold tracking-tighter mb-1 italic text-red-500">GARUDARP <span class="text-white text-sm not-italic opacity-50">RADAR</span></h1>
@@ -72,7 +72,7 @@
         </div>
     </div>
 
-    <div wire:poll.30s class="flex-1 bg-gray-900 rounded-2xl border border-gray-800 p-2 flex flex-col shadow-2xl overflow-hidden relative">
+    <div class="flex-1 bg-gray-900 rounded-2xl border border-gray-800 p-2 flex flex-col shadow-2xl overflow-hidden relative">
         
         <div class="flex-1 overflow-auto rounded-xl bg-black custom-scrollbar relative border border-gray-800 shadow-inner">
             
