@@ -674,7 +674,7 @@
                         <div class="hero-pill">Zombie Outbreak</div>
                         <div class="hero-pill">Loot & Crafting</div>
                         <div class="hero-pill">Faction Conflict</div>
-                        <div class="hero-pill">Indonesian Community</div>
+                        <div class="hero-pill">Indonesia Community</div>
                     </div>
 
                     <div class="copy-feedback" id="copyFeedback"></div>
