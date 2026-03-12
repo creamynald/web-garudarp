@@ -27,7 +27,7 @@ class Player extends Model
         'gang',
         'position',
         'metadata',
-        'inventory', // Izinkan update kolom inventory
+        'inventory',
         'last_updated',
     ];
 
@@ -61,8 +61,7 @@ class Player extends Model
         if (!$this->last_updated) {
             return false;
         }
-        
-        // Menganggap aktif jika update terakhir kurang dari 1 menit yang lalu
-        return $this->last_updated->gt(now()->subMinutes(1));
+
+        return $this->last_updated->gt(now()->subMinutes(15));
     }
 }
