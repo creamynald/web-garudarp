@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\FiveM\PlayerTracker;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.app');
 });
 
 Route::get('/players', PlayerTracker::class);
